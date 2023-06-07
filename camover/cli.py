@@ -162,7 +162,7 @@ class CamOverCLI(CamOver, Badges):
             self.print_process("Authorizing Shodan by given API key...")
             try:
                 shodan = Shodan(self.args.shodan)
-                results = shodan.search(query='product:"GoAhead-Webs httpd" country:"UA"')
+                results = shodan.search(query='goahead country:"UA"')
                 addresses = list()
                 for result in results['matches']:
                     addresses.append(result['ip_str'] + ':' + str(result['port']))
